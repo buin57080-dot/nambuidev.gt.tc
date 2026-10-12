@@ -1,0 +1,692 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080b16">
+<meta name="description" content="NAMBUIDEV AI - Khám phá công nghệ trí tuệ nhân tạo, sáng tạo và lập trình tương lai.">
+<title>NAMBUIDEV AI | The Future of Intelligence</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #080b16;
+    --panel: #11172a;
+    --text: #f5f7ff;
+    --muted: #9ba6c5;
+    --blue: #6585ff;
+    --cyan: #45e4ff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button, input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    width: min(1120px, 90%);
+    margin: auto;
+}
+
+/* THANH ĐIỀU HƯỚNG */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(8, 11, 22, .88);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid #ffffff12;
+}
+
+nav {
+    min-height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--cyan);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.nav-links a:hover {
+    color: var(--cyan);
+}
+
+.nav-button, .primary-button {
+    border: 0;
+    color: white;
+    background: linear-gradient(110deg, #526fff, #09bfe6);
+    border-radius: 12px;
+    padding: 11px 18px;
+    font-weight: 700;
+    transition: .25s;
+}
+
+.nav-button:hover, .primary-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px #477bff45;
+}
+
+/* TRANG CHỦ */
+
+.hero {
+    min-height: 610px;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    gap: 50px;
+    padding-top: 65px;
+    padding-bottom: 75px;
+}
+
+.tag {
+    display: inline-block;
+    color: var(--cyan);
+    border: 1px solid #45e4ff45;
+    background: #45e4ff0c;
+    padding: 7px 13px;
+    border-radius: 30px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 6vw, 70px);
+    line-height: 1.08;
+    letter-spacing: -3px;
+    margin-bottom: 24px;
+}
+
+.gradient-text {
+    background: linear-gradient(100deg, #7d91ff, #45e4ff);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.hero p {
+    color: var(--muted);
+    max-width: 520px;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
+}
+
+.secondary-button {
+    background: #ffffff08;
+    color: white;
+    border: 1px solid #ffffff25;
+    border-radius: 12px;
+    padding: 11px 18px;
+}
+
+.secondary-button:hover {
+    background: #ffffff15;
+}
+
+.hero-art {
+    min-height: 360px;
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+.orb {
+    width: min(310px, 75vw);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 90px;
+    position: relative;
+    background: radial-gradient(circle at 35% 30%,
+        #7aeaff, #526fff 38%, #171c50 70%, #080b16 100%);
+    box-shadow: 0 0 70px #506cff38, inset 0 0 40px #ffffff28;
+    animation: float 5s ease-in-out infinite;
+}
+
+.orb::before, .orb::after {
+    content: "";
+    position: absolute;
+    inset: -25px;
+    border: 1px solid #6585ff70;
+    border-radius: 50%;
+    transform: rotateX(65deg) rotateZ(-25deg);
+}
+
+.orb::after {
+    inset: -45px;
+    border-color: #45e4ff45;
+    transform: rotateX(65deg) rotateZ(35deg);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* THỐNG KÊ */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid #ffffff12;
+    border-bottom: 1px solid #ffffff12;
+    padding: 25px 0;
+    text-align: center;
+}
+
+.stat strong {
+    font-size: 25px;
+    color: var(--cyan);
+}
+
+.stat p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* CÁC PHẦN CHÍNH */
+
+section.content-section {
+    padding: 85px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-heading h2 {
+    font-size: clamp(27px, 4vw, 39px);
+    margin-bottom: 10px;
+}
+
+.section-heading p {
+    color: var(--muted);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    padding: 25px;
+    border: 1px solid #ffffff12;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #151c32, #0c1020);
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: #6585ff85;
+}
+
+.card-icon {
+    width: 54px;
+    height: 54px;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+    background: #6585ff18;
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* CHAT AI */
+
+.chat-section {
+    background: radial-gradient(ellipse at top, #182344, #080b16 70%);
+}
+
+.chat-box {
+    max-width: 760px;
+    margin: auto;
+    border: 1px solid #ffffff18;
+    background: #0d1222;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 20px 80px #00000035;
+}
+
+.chat-header {
+    padding: 19px 22px;
+    border-bottom: 1px solid #ffffff12;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #45e4a4;
+    box-shadow: 0 0 10px #45e4a4;
+}
+
+.chat-header small {
+    display: block;
+    color: var(--muted);
+}
+
+.chat-messages {
+    height: 310px;
+    overflow-y: auto;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message {
+    max-width: 85%;
+    padding: 12px 15px;
+    border-radius: 15px;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font-size: 14px;
+}
+
+.bot {
+    align-self: flex-start;
+    background: #19213a;
+    border: 1px solid #ffffff0b;
+}
+
+.user {
+    align-self: flex-end;
+    background: linear-gradient(110deg, #4d63e8, #397ee9);
+}
+
+.chat-form {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    border-top: 1px solid #ffffff12;
+}
+
+.chat-form input {
+    min-width: 0;
+    flex: 1;
+    padding: 13px 15px;
+    color: white;
+    background: #171d30;
+    border: 1px solid #ffffff12;
+    border-radius: 12px;
+    outline: none;
+}
+
+.chat-form input:focus {
+    border-color: var(--blue);
+}
+
+.chat-form button {
+    padding: 0 18px;
+    border: 0;
+    border-radius: 12px;
+    color: white;
+    background: #526fff;
+}
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid #ffffff12;
+    padding: 30px 0;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+footer strong {
+    color: white;
+}
+
+@media (max-width: 760px) {
+    .nav-links {
+        gap: 13px;
+        font-size: 12px;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 25px;
+        padding-top: 55px;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-art {
+        min-height: 310px;
+    }
+
+    .orb {
+        width: 220px;
+        font-size: 70px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        gap: 10px;
+    }
+
+    .stat strong {
+        font-size: 20px;
+    }
+
+    .stat p {
+        font-size: 11px;
+    }
+
+    section.content-section {
+        padding: 65px 0;
+    }
+}
+
+@media (max-width: 390px) {
+    .logo {
+        font-size: 17px;
+    }
+
+    .nav-links {
+        gap: 9px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <a class="logo" href="#home">NAMBUI<span>DEV</span></a>
+
+            <div class="nav-links">
+                <a href="#home">Trang chủ</a>
+                <a href="#technology">Công nghệ</a>
+                <a href="#chat">AI Chat</a>
+            </div>
+
+            <a class="nav-button" href="#chat">Khám phá AI ↗</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="container hero" id="home">
+        <div>
+            <div class="tag">✦ THE NEXT GENERATION OF AI</div>
+
+            <h1>
+                Khám phá<br>
+                sức mạnh<br>
+                <span class="gradient-text">trí tuệ nhân tạo.</span>
+            </h1>
+
+            <p>
+                Chào mừng đến với NAMBUIDEV AI — nơi công nghệ,
+                sáng tạo và trí tuệ nhân tạo kết nối để mở ra
+                những khả năng mới cho tương lai.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#chat" class="primary-button">
+                    Bắt đầu khám phá →
+                </a>
+                <a href="#technology" class="secondary-button">
+                    Tìm hiểu thêm
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-art">
+            <div class="orb">✦</div>
+        </div>
+    </section>
+
+    <div class="container stats">
+        <div class="stat">
+            <strong>AI</strong>
+            <p>Trí tuệ nhân tạo</p>
+        </div>
+        <div class="stat">
+            <strong>∞</strong>
+            <p>Khả năng sáng tạo</p>
+        </div>
+        <div class="stat">
+            <strong>24/7</strong>
+            <p>Khám phá mọi lúc</p>
+        </div>
+    </div>
+
+    <section class="content-section" id="technology">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Công nghệ <span class="gradient-text">AI</span></h2>
+                <p>Khám phá những lĩnh vực đang thay đổi thế giới.</p>
+            </div>
+
+            <div class="cards">
+                <article class="card">
+                    <div class="card-icon">🤖</div>
+                    <h3>AI Chatbot</h3>
+                    <p>
+                        Trợ lý hội thoại giúp giải đáp câu hỏi,
+                        hỗ trợ học tập và tìm kiếm ý tưởng.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon">🎨</div>
+                    <h3>AI sáng tạo</h3>
+                    <p>
+                        Khám phá cách AI hỗ trợ tạo hình ảnh,
+                        nội dung và những ý tưởng độc đáo.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon">💻</div>
+                    <h3>AI lập trình</h3>
+                    <p>
+                        Hỗ trợ viết code, tìm lỗi và xây dựng
+                        các dự án website thông minh.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section chat-section" id="chat">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Trò chuyện cùng <span class="gradient-text">AI</span></h2>
+                <p>Nhập câu hỏi để trải nghiệm giao diện NAMBUIDEV AI.</p>
+            </div>
+
+            <div class="chat-box">
+                <div class="chat-header">
+                    <div class="status-dot"></div>
+                    <div>
+                        <strong>NAMBUIDEV Assistant</strong>
+                        <small>Giao diện chatbot demo</small>
+                    </div>
+                </div>
+
+                <div class="chat-messages" id="messages" aria-live="polite">
+                    <div class="message bot">
+                        Xin chào! 👋 Mình là NAMBUIDEV Assistant.
+                        Bạn muốn tìm hiểu điều gì về AI hoặc lập trình?
+                    </div>
+                </div>
+
+                <form class="chat-form" id="chatForm">
+                    <input
+                        id="userInput"
+                        type="text"
+                        placeholder="Nhập tin nhắn của bạn..."
+                        aria-label="Tin nhắn"
+                        maxlength="1000"
+                        required
+                    >
+                    <button type="submit">Gửi ➤</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <strong>NAMBUIDEV AI</strong>
+        <p>© <span id="year"></span> NAMBUIDEV. Built for the future.</p>
+    </div>
+</footer>
+
+<script>
+const form = document.getElementById("chatForm");
+const input = document.getElementById("userInput");
+const messages = document.getElementById("messages");
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+function addMessage(text, type) {
+    const message = document.createElement("div");
+    message.className = "message " + type;
+    message.textContent = text;
+    messages.appendChild(message);
+    messages.scrollTop = messages.scrollHeight;
+}
+
+function getDemoReply(text) {
+    const q = text.toLowerCase();
+
+    if (q.includes("xin chào") || q.includes("hello") ||
+        q.includes("chào")) {
+        return "Xin chào! 👋 Chào mừng bạn đến với NAMBUIDEV AI.";
+    }
+
+    if (q.includes("html") || q.includes("website") ||
+        q.includes("web")) {
+        return "HTML tạo cấu trúc website, CSS dùng để thiết kế giao diện, còn JavaScript giúp website có tính tương tác. Bạn có thể kết hợp cả ba để xây dựng một trang web hoàn chỉnh!";
+    }
+
+    if (q.includes("python") || q.includes("lập trình") ||
+        q.includes("code")) {
+        return "Để bắt đầu lập trình, bạn có thể học Python hoặc JavaScript. Hãy bắt đầu từ biến, điều kiện, vòng lặp và các hàm cơ bản nhé!";
+    }
+
+    if (q.includes("ai") || q.includes("trí tuệ nhân tạo")) {
+        return "AI là lĩnh vực công nghệ giúp máy tính thực hiện các nhiệm vụ như xử lý ngôn ngữ, nhận diện hình ảnh và hỗ trợ sáng tạo. Bạn muốn tìm hiểu AI tạo sinh, chatbot hay học máy?";
+    }
+
+    if (q.includes("bạn là ai") || q.includes("tên gì")) {
+        return "Mình là NAMBUIDEV Assistant, chatbot minh họa trên website NAMBUIDEV AI.";
+    }
+
+    return "Mình đã nhận được câu hỏi của bạn: \"" + text +
+        "\". Đây hiện là chatbot demo chạy bằng JavaScript, chưa kết nối mô hình AI thật. Bạn có thể tích hợp API AI để nhận câu trả lời thông minh hơn.";
+}
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const text = input.value.trim();
+    if (!text) return;
+
+    addMessage(text, "user");
+    input.value = "";
+    input.focus();
+
+    setTimeout(function() {
+        addMessage(getDemoReply(text), "bot");
+    }, 350);
+});
+</script>
+
+</body>
+</html>
